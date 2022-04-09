@@ -1,0 +1,27 @@
+.carts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    gap: 1rem;
+    padding-top: 3em;
+    
+
+    
+}
+
+@media (max-width: 35em){
+    .carts {
+        
+        grid-template-columns: repeat(2, 1fr);
+        width: 98vw;
+        margin: auto;
+     }
+
+    
+}
+@media (min-width: 35em){
+    .carts {
+        width: 60vw;
+        margin: auto;
+    }
+}
