@@ -13,13 +13,13 @@ const data = [
      price: 9550    
    },
    { id:3,
-    imageURL:"https://i.pinimg.com/564x/45/50/f2/4550f2208a4ad12dac2da9daa705382d.jpg",
+    imageURL:"https://i.pinimg.com/564x/5b/83/8c/5b838c6b7ecff4d91a5a153c2f4a1db3.jpg",
     name: "Bellah Sandals",
     category: "shoes",
     price: 8950    
   },
   { id:4,
-    imageURL: "https://i.pinimg.com/564x/76/c5/47/76c547389905d3c8bc3d3ce12895bf66.jpg",
+    imageURL: "https://i.pinimg.com/564x/a6/57/90/a657903f501537554baf2705af836693.jpg",
     name: "Crystal Hills",
     category: "shoes",
     price: 9800    

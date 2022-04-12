@@ -3,10 +3,13 @@ import React, {useState} from 'react';
 import Navbar from './components/Navbar';
 import Products from './components/Products/Products';
 import data from "./components/data.js"
-import Basket from './components/Basket';
 import {Routes, Route} from "react-router-dom"
+import {useSelector} from "react-redux"
 function App() {
-  const [cartItems, setCartItem] = useState([])
+  const cartItems = useSelector(state => state.cart.itemsList)
+
+
+
   const [add, setAdd] = useState(false)
   const [items, setItems] = useState(data)
 
@@ -19,28 +22,6 @@ function App() {
 
   } 
  
-  const onAdd = (product) => {
-   
-   
-    const exist = cartItems.find(x => x.id === product.id)
-    if(exist) {
-      setCartItem(cartItems.map(x => x.id === product.id ? {...exist, qty:exist.qty + 1} : x))
-    }else {
-      setCartItem([...cartItems, {...product, qty:1}])
-   }
-   setAdd(prev => !prev)
-
-  }
-
-  const onRemove = (product) => {
-    const exist = cartItems.find(x => x.id === product.id)
-    if(exist.qty === 1) {
-      setCartItem(cartItems.filter(x => x.id !== product.id))
-
-    } else{
-      setCartItem(cartItems.map(x => x.id === product.id ? {...exist, qty:exist.qty -1} : x))
-    }
-  }
 
  
 
@@ -48,13 +29,10 @@ function App() {
   return ( 
     <>
      <Navbar cartItems={cartItems} items={items} filterProducts={filterProducts} setItems={setItems} data={data} />
+     
+     
     <Routes>
-     
-      <Route path="/" element={<Products add={add} onAdd={onAdd} data={items} /> } />
-      <Route path='/cart' element={<Basket onAdd={onAdd} onRemove={onRemove} cartItems={cartItems} />} />
-    
-     
-    
+      <Route path="/" element={<Products add={add}  data={items} /> } />
     </Routes>
     </>
   );

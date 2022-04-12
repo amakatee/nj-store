@@ -10,9 +10,10 @@ export default function Products(props) {
  
   return (
     <div>
+      
       <div className='carts'>
         { data.map(product => {
-         return <Product add={add} key={product.id}  product={product} onAdd={onAdd} name={product.name} price={product.price} />
+         return <Product add={add} key={product.id} id={product.id} imageURL={product.imageURL}  product={product} onAdd={onAdd} name={product.name} price={product.price} />
         })}
        
       </div>

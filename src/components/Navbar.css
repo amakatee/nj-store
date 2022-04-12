@@ -49,6 +49,9 @@ li a{
     
 
 }
+.empty-cart-div {
+    padding: 3em;
+}
 #logo {
     text-transform: uppercase;
     font-size: 1.4rem;
@@ -112,7 +115,6 @@ li a{
 
 @media (min-width: 35em) {
     .primary-navigation {
-       
         padding-block: .8rem;
         gap: clamp(1.5rem, 5vw, 3rem);
         padding-inline: clamp(5rem, 18vw, 20rem);
@@ -135,7 +137,6 @@ li a{
 
     }
     .primary-navigation {
-        
         z-index: 998;
         position: fixed;
         inset: 0 0 0 30%;
@@ -154,7 +155,7 @@ li a{
    
     .mobile-nav-toggle {
         position: fixed;
-        background-image: url('./menu-alt-right-regular-24.png');
+        background-image: url('./../assets/menu-alt-right-regular-24.png');
         background-repeat: no-repeat;
         width: 3rem;
         background-color: transparent;
@@ -162,7 +163,7 @@ li a{
         display: block;
         aspect-ratio: 1;
         top: 0;
-        right: 1rem;
+        right: 0.6rem;
         z-index: 999;
         cursor: pointer;
         transform: scale(.5);
@@ -170,19 +171,21 @@ li a{
     }
     .mobile-nav-toggle[aria-expanded="true"] {
         width: 3rem;
-        background-image:url("./x-regular-24.png");
+        background-image:url("./../assets/x-regular-24.png");
         transform: scale(.7);
     }
     .active {
         transition: .1s ease;
     }
     .active:hover {
-       
         padding-inline: .1rem;
         padding-block: .3rem;
         cursor: pointer;
-       transition: .2s ease-out;
-       transform: scale(1.07);
+        transition: .2s ease-out;
+        transform: scale(1.07);
       
+    }
+    .left-menu {
+        margin-right: -1rem;
     }
 }

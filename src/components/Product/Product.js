@@ -1,20 +1,30 @@
 import React from 'react'
 import './Product.css'
 import formatCurrency from '../utils/FormatCurrency'
+import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { cartAction } from '../../store/cartSlice'
 
 export default function Product(props) {
-   const {name, price, onAdd ,product, add } = props
-
+   const {product, name, price, id, imageURL} = props
  
+   const dispatch = useDispatch()
+
+   const addToCart = () => {
+       dispatch(cartAction.addToCart({name, id, price, imageURL}))
+
+
+  }
 
 
   return (
     <div>
+     
         <div className='cart'>
             <div className='img-container'>
-                <a href='#'><img src={product.imageURL}></img></a>
+                <a href='#'><img src={imageURL}></img></a>
                 
-                <button  onClick={() => onAdd(product)} className='add-to-cart'>Add to Cart</button>
+                <button onClick={addToCart} className='add-to-cart'>Add to Cart</button>
             </div>
             <div>
                 <div className='carts-description flex'>

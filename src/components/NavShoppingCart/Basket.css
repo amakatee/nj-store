@@ -1,3 +1,12 @@
+.nav__shopping-cart {
+    margin-top: 5rem;
+   
+    position: fixed;
+    z-index: 200;
+  
+    width: 40vw;
+    height: 80vh;
+}
 .nav-shopping-cart {
     background-color: white;
    
